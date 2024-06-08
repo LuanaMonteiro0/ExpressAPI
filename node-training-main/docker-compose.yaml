@@ -1,0 +1,13 @@
+services:
+  api:
+    image: training/myapp:1.0
+    depends_on:
+      - postgres
+    ports:
+      - "8000:8000"
+  postgres:
+    image: postgres
+    environment:
+      - POSTGRES_PASSWORD=1234
+    ports:
+      - "5432:5432"
